@@ -8,7 +8,10 @@ from kivy.uix.screenmanager import ScreenManager,Screen
 
 class MainScreen(Screen):
       pass
-
+class BMIScreen(Screen,FloatLayout):
+    def __init__(self,**kwargs):
+        super(BMIScreen,self).__init__(**kwargs)
+   
                 
 
 class BMI(App):
