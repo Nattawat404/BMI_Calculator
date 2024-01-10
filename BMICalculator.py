@@ -4,7 +4,7 @@ from kivy.core.window import Window
 from kivy.uix.label import Label
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.screenmanager import ScreenManager,Screen
+from kivy.uix.screenmanager import ScreenManager,Screen,FadeTransition
 
 class MainScreen(Screen):
       pass
