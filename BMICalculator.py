@@ -11,9 +11,15 @@ class MainScreen(Screen):
 class BMIScreen(Screen,FloatLayout):
     def __init__(self,**kwargs):
         super(BMIScreen,self).__init__(**kwargs)
-   
+    def calculate_BMI(self,w,h):
+        if  w != "" and h !="":
+                try:
+                        return str(round((float(w)/(float(h)**2)),2))
+                except Exception:
+                      return "Eror"
+        else:
+            return ""
                 
-
 class BMI(App):
 
     def build(self):
