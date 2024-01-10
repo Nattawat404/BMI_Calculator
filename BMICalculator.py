@@ -48,8 +48,11 @@ class BMI(App):
                     
 class SceenManagment(ScreenManager):
       pass
-                           
-    
+presentation=Builder.load_file("BMICalculator.kv")               
+
+class MainApp(App):
+      def build(self):
+          return presentation
 if __name__=='__main__':
-    BMI().run()
+    MainApp().run()
 
