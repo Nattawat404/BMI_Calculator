@@ -11,10 +11,10 @@ class MainScreen(Screen):
 class BMIScreen(Screen,FloatLayout):
     def __init__(self,**kwargs):
         super(BMIScreen,self).__init__(**kwargs)
-    def calculate_BMI(self,w,h):
-        if  w != "" and h !="":
+    def calculate_BMI(self,weight,hight):
+        if  weight != "" and hight !="":
                 try:
-                        return str(round((float(w)/(float(h)**2)),2))
+                        return str(round((float(weight)/(float(hight)**2)),2))
                 except Exception:
                       return "Eror"
         else:
@@ -32,17 +32,17 @@ class BMI(App):
         else:
                     try:
                            if float(result)<=18.5:
-                                return "Underweight"
-                           elif 18.5<= float(result)<=22.9:
+                                return " underweight"
+                           elif float(result)<=24.9:
                                 return "Normal"
-                           elif 23.0<=float(result)<=24.9:
-                                return "Chubby"
-                           elif 25<=float(result)<=29.9:
-                                 return "Overweight"
-                           elif 30<=float(result)<=34.9:
+                           elif float(result)<=29.9:
+                                return "Overweight"
+                           elif float(result)<=34.9:
+                                 return "severely overweight"
+                           elif float(result)<=39.9:
                                  return "Obese"
                            else:
-                                 return "Extremely obese"
+                                 return "Severely obese"
                     except Exception:
                           return "Eror"
                     
