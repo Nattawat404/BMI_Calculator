@@ -45,6 +45,9 @@ class BMI(App):
                                  return "Extremely obese"
                     except Exception:
                           return "Eror"
+                    
+class SceenManagment(ScreenManager):
+      pass
                            
     
 if __name__=='__main__':
