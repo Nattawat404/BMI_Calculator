@@ -1,2 +1,58 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
-
+ScreenManagement:
+	transition: FadeTransition()
+	MainScreen:
+	BMIScreen:
+<Button>:
+	font_size: 32
+<MainScreen>:
+	name:"main_screen"
+	FloatLayout:
+		Button:
+			on_release: app.root.current = "BMI"
+			text: "BMI"
+				
+<BMIScreen>:
+	id: bmi
+	name:"BMI"
+	display: bmi
+	display: height
+	display: weight
+	display: x
+	display: fl
+	FloatLayout:
+		id: fl
+		Label:
+			font_size: 18
+			pos_hint:{"x":-0.25,"y":0}
+			text:u"How tall are you in meters?"
+		TextInput:
+			text:""
+			id: height
+			multiline:False
+			font_size: 60
+			halign: 'center'
+			pos_hint:{"x":0.15,"y":0.1}
+			size_hint:0.2,0.3
+		Label:
+			font_size: 18
+			pos_hint:{"x":0.25,"y":0}
+			text:u'What\'s your weight in kg?'
+		TextInput:
+			text:""
+			id: weight
+			multiline:False
+			font_size: 60
+			halign: 'center'
+			pos_hint:{"x":0.65,"y":0.1}
+			size_hint:0.2,0.3
+		Label:
+			font_size: 18
+			text:"%s" %bmi.weight(x.text)
+			pos_hint:{"x":0,"y":0.2}
+		Label:
+			id: x
+			pos_hint:{"y":0.3}
+			font_size: 60
+			text: "%s" %bmi.calc(height.text,weight.text)

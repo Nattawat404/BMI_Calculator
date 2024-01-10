@@ -1,36 +1,48 @@
-import kivy
 from kivy.app import App
-from kivy.core.window import Window
-from kivy.uix.label import Label
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.screenmanager import ScreenManager,Screen,FadeTransition
+from kivy.uix.screenmanager import ScreenManager, Screen
 
-class Home(Screen):
-      pass
-class Gender_Screen(Screen):
+
+class MainScreen(Screen):
+        pass
+
+class BMIScreen(Screen,FloatLayout):
+        def __init__(self,**kwargs):
+            super(BMIScreen, self).__init__(**kwargs)
+        def calc(self,m,s):
+                if m != "" and s != "":
+                                try:
+                                        return str(round((float(s)/(float(m)**2)),2))
+                                except Exception:
+                                        return "Error"
+                else:
+                        return ""
+        def weight(self,result):
+                if result == "":
+                        return ""       
+                else:
+                        try:
+                                if  float(result)<= 18.5:
+                                        return "Underweight"
+                                elif  float(result)<= 25:
+                                        return "Normal"
+                                elif  float(result)<= 30:
+                                        return "Overweight"
+                                elif  float(result)<= 35:
+                                        return "Obese"
+                                else:
+                                        return "Extremely obese"
+                        except Exception:
+                                return "Error"
+class ScreenManagement(ScreenManager):
     pass
 
-class Age_Screen(Screen):
-    pass
-
-class Height_Screen(Screen):
-    pass
-
-class Weight_Screen(Screen):
-    pass
-
-class Result_Screen(Screen):
-    pass
-                    
-class SceenManagment(ScreenManager):
-      pass
-presentation=Builder.load_file("BMICalculator.kv")               
+presentation = Builder.load_file("BMICalculator.kv")
 
 class MainApp(App):
-      def build(self):
-          Window.clearcolor =(1,1,1,1)
-          return presentation
+    def build(self):
+        return presentation
 
-MainApp().run()
-
+if __name__ == "__main__":
+        MainApp().run()
