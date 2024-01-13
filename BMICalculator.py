@@ -8,7 +8,7 @@ class MainScreen(Screen):
       pass
 class GenderScreen(Screen):
       pass
-class AgeScreen(screen):
+class AgeScreen(Screen):
      pass
 class HightScreen(Screen):
      pass
