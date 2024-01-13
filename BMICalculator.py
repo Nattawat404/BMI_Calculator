@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.button import Button
 
 
 class MainScreen(Screen):
@@ -42,17 +43,8 @@ class BMIScreen(Screen,FloatLayout):
                                         return "Extremely obese"
                         except Exception:
                                 return "Error"
-
-
         
 class ScreenManagement(ScreenManager):
     pass
-
-presentation = Builder.load_file("BMICalculator.kv")
-
-class MainApp(App):
-    def build(self):
-        return presentation
-
 if __name__ == "__main__":
-        MainApp().run()
+        BMIScreen(Screen,FloatLayout).run()
