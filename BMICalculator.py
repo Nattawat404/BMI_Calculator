@@ -1,29 +1,24 @@
+import kivy
 from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
+from kivy.uix.gridlayout import GridLayout
+from kivy.config import Config
 
-Builder.load_file('BMICalculator.kv')
+Config.set('graphics', 'width', '400')
+Config.set('graphics', 'height', '600')
 
-class MainScreen(Widget):
-        name= ObjectProperty(None)
+class Calculator(GridLayout):
+    def calculate_bmi(self, weight, height):
+        try:
+            bmi = float(weight) / ((float(height) / 100) ** 2)
+            return bmi
+        except Exception as e:
+            print(e)
+            return None
 
-        def press(self):
-             pass
+class BMICalculatorApp(App):
+    def build(self):
+        return Calculator()
+        print(bmi)
 
-class GenderScreen(Screen):
-      pass
-# class AgeScreen(Screen):
-#      pass
-# class HightScreen(Screen):
-#      pass
-# class WeightScreen(Screen):
-#      pass
-# class BMIScreen(Screen):     
-class MyApp(App):
-       def build(self):
-       
-              return MainScreen()
-if __name__ =="__main__":
-         MyApp().run()
+if __name__ == '__main__':
+    BMICalculatorApp().run()
