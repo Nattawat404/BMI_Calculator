@@ -20,15 +20,25 @@ class MainScreen(GridLayout):
             self.top_grid.cols=1
 
             self.top_grid.add_widget(Label(text="Welcome to BMI Calculator"))
-            self.top_grid.add_widget(Label(text="Please enter your Name: "))
-            self.name = TextInput(multiline=False)
+            self.top_grid.add_widget(Label(text="Please enter your Name: ",
+                                           size_hint_y=None,
+                                           height=50,
+                                           size_hint_x=None,
+                                           width=700))
+            self.name = TextInput(multiline=False,
+                                  size_hint_y=None,
+                                  height=50,
+                                  size_hint_x=None,
+                                  width=700)
             self.top_grid.add_widget(self.name)
             self.add_widget(self.top_grid)
 
             self.start=Button(text="Start",
                               font_size=40,
                               size_hint_y=None,
-                              height=50
+                              height=50,
+                              size_hint_x=None,
+                              width=700
                               )
             self.start.bind(on_press=self.press)
             self.add_widget(self.start)
