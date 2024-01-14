@@ -3,10 +3,10 @@ from kivy.lang import Builder
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
-from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.button import Button
-from kivy.core.window import Window
+
+
 
 
 
@@ -24,7 +24,7 @@ class MainScreen(GridLayout):
                                            size_hint_y=None,
                                            height=50,
                                            size_hint_x=None,
-                                           width=700))
+                                            width=700))
             self.name = TextInput(multiline=False,
                                   size_hint_y=None,
                                   height=50,
@@ -57,7 +57,7 @@ class MainScreen(GridLayout):
 # class BMIScreen(Screen):     
 class MyApp(App):
        def build(sself):
-        #       Window.clearcolor=(1,1,1,1 )
+       
               return MainScreen()
 if __name__ =="__main__":
          MyApp().run()
