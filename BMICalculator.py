@@ -5,6 +5,7 @@ from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
 Builder.load_file('BMICalculator.kv')
+
 class MainScreen(Widget):
         name= ObjectProperty(None)
 
