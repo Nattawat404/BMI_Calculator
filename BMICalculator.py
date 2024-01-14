@@ -6,17 +6,16 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
-
+from kivy.properties import ObjectProperty
 
 class MainScreen(Widget):
-        
-           
+        name= ObjectProperty(None)
 
-        def press(self,instance):
+        def press(self):
              pass
 
-# class GenderScreen(Screen):
-#       pass
+class GenderScreen(Screen):
+      pass
 # class AgeScreen(Screen):
 #      pass
 # class HightScreen(Screen):

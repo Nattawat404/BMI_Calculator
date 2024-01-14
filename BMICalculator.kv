@@ -1,7 +1,9 @@
 <MainScreen>:
+    name:name
+
     GridLayout:
         cols:1
-
+        size: root.width,root.height
         GridLayout:
             cols:1
 
@@ -11,8 +13,10 @@
             Label:
                 text:"Please enter your name"
             TextInput:
+                id:name
                 multiline:False
             
         Button:
             text:"Start"
-			
+			font_size:40
+            on_press:root.press()
