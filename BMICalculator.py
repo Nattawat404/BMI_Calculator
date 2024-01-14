@@ -4,6 +4,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
+Builder.load_file('BMICalculator.kv')
 class MainScreen(Widget):
         name= ObjectProperty(None)
 
@@ -19,9 +20,9 @@ class GenderScreen(Screen):
 # class WeightScreen(Screen):
 #      pass
 # class BMIScreen(Screen):     
-class BMICalculator(App):
+class MyApp(App):
        def build(self):
        
               return MainScreen()
 if __name__ =="__main__":
-         BMICalculator().run()
+         MyApp().run()
